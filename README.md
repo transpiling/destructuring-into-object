@@ -17,7 +17,7 @@ So, I propose this sugar:
 		
 	out.{b,c,d} = in
 	
-+ This syntax is more clear and understandable: even without ES6 knowleges, developer can assume that some properties assigned to `out` from `in` variable.
++ This syntax is more clear and understandable: even without ES6 knowleges, developer can assume that some properties assigned to left-side `out` from right-side `in` variable.
 + You can omit braces `()` becouse statement doesn't starts with `{` now.  
 
 
