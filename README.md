@@ -2,22 +2,22 @@
 
 If you assign via destructuring, each assignment target can be everything that is allowed on the left-hand side of a normal assignment.
 ```js
-let in = {b:2,c:3,d:4}, out = {a:1}     
+let src = {a:1,b:2,c:3}, target = {};     
 	
-({b: out.b} = in)  
+({a: target.a} = src);  
 	
-console.log(out) // {a:1,b:2}
+console.log(target); // {a:1}
 ```
 
 But that syntax isn't very good, especially for assigning to many properties:
 ```js	
-({b:out.b, c:out.c, d:out.d} = in)
+({a: target.a, b:target.b, c:target.c} = src)
 ```
 So, I propose this sugar:
 ```js	
-out.{b,c,d} = in
+target.{a,b,c} = src
 ```
-+ This syntax is more clear and understandable: even without ES6 knowleges, developer can assume that some properties assigned to left-side `out` from right-side `in` variable.
++ This syntax is more clear and understandable: even without ES6 knowleges, developer can assume that some properties assigned to left-side `target` from right-side `src` variable.
 + You can omit braces `()` becouse statement doesn't starts with `{` now.  
 
 
