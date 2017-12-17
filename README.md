@@ -3,21 +3,27 @@
 If you assign via destructuring, each assignment target can be everything that is allowed on the left-hand side of a normal assignment.
 
 	let in = {b:2}, out = {a:1}    
+	
 	({b: out.b} = in)  
 	
 	console.log(out) // {a:1,b:2}
 	
 
-But that syntax isn't very good for assigning to many properties:
+But that syntax isn't very good, especially for assigning to many properties:
 
 	let in = {b:2,c:3,d:4}, out = {a:1}   
+	
 	({b:out.b, c:out.c, d:out.d} = in)
 
 So, I propose this sugar:
 	
 	let in = {b:2,c:3,d:4}, out = {a:1}  
+	
 	out.{b,c,d} = in
 	
++ This syntax is more clear and understandable: even without ES6 knowleges, developer can assume that some properies assigned to `out` from `in` variable.
++ You can omit braces `()` becouse statement doesn't starts with `{` now.  
+
 
 Please star, if you like) And I will create babel plugin.  
 
