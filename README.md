@@ -31,5 +31,7 @@ Cool, but that syntax can be more sweet. So, I propose new EcmaScript constructi
 
 Please star, if you like) And I will create babel plugin.  
 
+[Read more](http://exploringjs.com/es6/ch_destructuring.html#sec_assignment-targets)
+
 [compatibility]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Browser_compatibility
 
