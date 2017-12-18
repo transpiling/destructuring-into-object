@@ -13,18 +13,19 @@ But that syntax isn't very good, especially for assigning to many properties:
 ```js	
 ({a: target.a, b:target.b, c:target.c} = src)
 ```
-## EcmaScript proposal
+## ECMA Script proposal
 
 So, I propose this sugar:
 ```js	
 target.{a,b,c} = src
 ```
-+ This syntax is more clear and understandable: even without ES6 knowleges, any developer can assume that some properties assigned to left-side `target` from right-side `src` variable.
++ This syntax is more clear and understandable: even without ES6 knowleges, any developer can assume that some properties assigned to the left-side `target` from right-side `src` variable.
 + You can omit braces `()` becouse statement doesn't starts with `{` now.  
 
 ## Babel plugin
 
-Please star, if you like) And I will create babel plugin.  
+Please star, to start) And I will create babel plugin.  
 
-[Read more about destructuring in JavaScript...](http://exploringjs.com/es6/ch_destructuring.html#sec_assignment-targets)
+### Read more 
+[Destructuring in JavaScript](http://exploringjs.com/es6/ch_destructuring.html#sec_assignment-targets)
 
