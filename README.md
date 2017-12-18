@@ -1,8 +1,8 @@
 [![](http://truejs.com/content/images/2016/07/destructuring-1.png)](http://exploringjs.com/es6/ch_destructuring.html)
 
-# Destructuring into object
+# Destructuring into object(s)
 
-If you assign via destructuring, each assignment target can be everything that is allowed on the left-hand side of a normal assignment.
+If you assign via destructuring, each assignment target can be everything that is allowed on the left side of a normal assignment.
 ```js
 let srcObject = {a:1,b:2,c:3}, target = {};     
 	
@@ -27,7 +27,7 @@ target.{a,b,c} = srcObject
 ```
 ### Why?
 + This syntax is more clear and understandable:    
-  even without ES2015 knowleges, experienced developer can assume that some properties assigned to the left-side `target` from right-side `srcObject` variable.
+  even without ES2015 knowleges, experienced developer can assume that some properties assigned to the left-side `target` from a right-side `srcObject` variable.
 + The destructuring goal is met: elimination of names duplication.
 + You can omit braces `()` becouse statement doesn't starts with `{` now.  
 
