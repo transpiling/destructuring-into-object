@@ -9,7 +9,7 @@ let src = {a:1,b:2,c:3}, target = {};
 console.log(target); // {a:1}
 ```
 
-But that syntax isn't very good, especially for assigning to many properties:
+But that syntax isn't very userful, especially for assigning to many properties:
 ```js	
 ({a: target.a, b:target.b, c:target.c} = src)
 ```
@@ -19,7 +19,7 @@ So, I propose this sugar:
 ```js	
 target.{a,b,c} = src
 ```
-+ This syntax is more clear and understandable: even without ES6 knowleges, any developer can assume that some properties assigned to the left-side `target` from right-side `src` variable.
++ This syntax is more clear and understandable: even without ES6 knowleges, any experienced developer can assume that some properties assigned to the left-side `target` from right-side `src` variable.
 + You can omit braces `()` becouse statement doesn't starts with `{` now.  
 
 ## Babel plugin
