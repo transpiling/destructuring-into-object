@@ -21,7 +21,7 @@ But current syntax isn't very userful, especially for assigning to many properti
 
 # ECMAScript 2018 proposal
 
-So, I want to propose this sugar:
+So, in addition to current syntax, I want to propose this sugar:
 ```js	
 target.{a,b,c} = srcObject
 ```
