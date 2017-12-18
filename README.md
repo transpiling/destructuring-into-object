@@ -4,16 +4,16 @@
 
 If you assign via destructuring, each assignment target can be everything that is allowed on the left-hand side of a normal assignment.
 ```js
-let src = {a:1,b:2,c:3}, target = {};     
+let srcObject = {a:1,b:2,c:3}, target = {};     
 	
-({a: target.a} = src);  
+({a: target.a} = srcObject);  
 	
 console.log(target); // {a:1}
 ```
 
-But that syntax isn't very userful, especially for assigning to many properties:
+But current syntax isn't very userful, especially for assigning to many properties:
 ```js	
-({a: target.a, b:target.b, c:target.c} = src)
+({a: target.a, b:target.b, c:target.c} = srcObject)
 ```
 
 ### Read more
@@ -23,9 +23,12 @@ But that syntax isn't very userful, especially for assigning to many properties:
 
 So, I want to propose this sugar:
 ```js	
-target.{a,b,c} = src
+target.{a,b,c} = srcObject
 ```
-+ This syntax is more clear and understandable: even without ES2015 knowleges, any experienced developer can assume that some properties assigned to the left-side `target` from right-side `src` variable.
+### Why?
++ This syntax is more clear and understandable:    
+  even without ES2015 knowleges, experienced developer can assume that some properties assigned to the left-side `target` from right-side `srcObject` variable.
++ The destructuring goal is met: elimination of names duplication.
 + You can omit braces `()` becouse statement doesn't starts with `{` now.  
 
 # Babel plugin
