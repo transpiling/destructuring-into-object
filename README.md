@@ -1,4 +1,4 @@
-# Destructuring into object (EcmaScript proposal)
+# Destructuring into object
 
 If you assign via destructuring, each assignment target can be everything that is allowed on the left-hand side of a normal assignment.
 ```js
@@ -13,6 +13,8 @@ But that syntax isn't very good, especially for assigning to many properties:
 ```js	
 ({a: target.a, b:target.b, c:target.c} = src)
 ```
+## EcmaScript proposal
+
 So, I propose this sugar:
 ```js	
 target.{a,b,c} = src
