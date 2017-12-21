@@ -25,19 +25,19 @@ So, in addition to current syntax, I want to propose this sugar:
 
 	target.{a,b,c} = srcObject
 
-### Why?
+#### Why?
 
 + This syntax is more clear and understandable:    
   even without ES6/ES2015 knowleges, experienced developer can assume that some properties assigned to the left-side `target` from a right-side `srcObject` variable.
 + The destructuring goal is met: elimination of identifiers duplication.
 + You can omit braces `()` because statement doesn't starts with `{` now.  
 	
-### Explode object into local variables
+#### Explode object into local variables
 
 	let * = {var1:1, var2:2} // like import * from 'some-module'
 	console.log(var1, var2) // 1 2
 
-### Object.assign() new syntax
+#### Object.assign() new syntax
 
 	let target = {var0:0}
 	
