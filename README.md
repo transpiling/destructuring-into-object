@@ -15,7 +15,7 @@ If you assign via destructuring, each assignment target can be everything that i
 	
 ## Problem
 
-ES6 destructuring syntax isn't very useful, especially for assigning to properties of other object:
+ES6 destructuring syntax isn't very readable and useful, especially for assigning to properties of existing object:
 ```js
 	// ES6
 	({
@@ -29,27 +29,23 @@ ES6 destructuring syntax isn't very useful, especially for assigning to properti
 	target.b = srcObject.b;
 	target.c = srcObject.c;
 ```
-- identifiers are still duplicated (there is no reason to start using new ES6 syntax, old syntax is better)
-- there is hard to assume that `target` object will be modified, if developer do not know ES6
+There is no reasons to start using new ES6 destructuring syntax now, old syntax is better, because:
+- there is hard to assume that `target` object will be modified, if developer does not familar with new standart
+- identifiers are still duplicated
 - you should write braces `()` or use other solution, because JS statement cannot starts with `{`
 
 ## Proposal
 
-So, in addition to current syntax, I want to propose this sugar:
+So, in addition to current ES6 syntax, I want to propose this sugar:
 
 	target.{a,b,c} = srcObject
 
 #### Why?
 
 + This syntax is more clear and understandable:    
-  even without ES6/ES2015 knowleges, experienced developer can assume that some properties assigned to the left-side `target` from a right-side `srcObject` variable.
-+ The destructuring goal is met: full elimination of identifiers duplication.
+  even without ES6 knowleges, developer can assume that some properties assigned to the left-side `target` from a right-side `srcObject` variable.
++ The one of destructuring goal is met: full elimination of identifiers duplication.
 + You can omit braces `()` because JS statement doesn't starts with `{` now.  
-	
-#### Extract object properties into local variables
-
-	let * = {a:1, b:2} // like import * from 'module'
-	console.log(a, b) // 1 2
 
 #### New syntax for Object.assign()
 
@@ -58,13 +54,18 @@ So, in addition to current syntax, I want to propose this sugar:
 	target.* = {b:1, c:2}
 	// or target.{} = ...
 	
-	console.log(target) // {a:0, b:1, c:2}
+	console.log(target) // {a:0, b:1, c:2}	
 	
 Useful for:
 
-+ adding props to the `this` object in class constructor
-+ adding methods to the prototype of class, when building custom classes
++ adding properties to the `this` object in constructor
++ adding methods to the prototype of class
+	
+#### Extracting properties into local variables
 
+	let * = {a:1, b:2} // like import * from 'module'
+	console.log(a, b) // 1 2
+	
 ## Babel plugin
 
 Please star, to start) And I will create babel plugin. 
