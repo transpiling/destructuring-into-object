@@ -39,6 +39,7 @@ There is no reasons to start using new ES6 destructuring syntax now, old syntax 
 So, in addition to current ES6 syntax, I want to propose this sugar:
 
 	target.{a,b,c} = srcObject
+	//alternative: target.* = srcObject{a,b,c}
 
 #### Why?
 
@@ -52,7 +53,7 @@ So, in addition to current ES6 syntax, I want to propose this sugar:
 	let target = {a:0}
 	
 	target.* = {b:1, c:2}
-	// or target.{} = ...
+	//alternative: target.{} = ...
 	
 	console.log(target) // {a:0, b:1, c:2}	
 	
