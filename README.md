@@ -1,3 +1,5 @@
+- [ES discuss mailing list](https://mail.mozilla.org/pipermail/es-discuss/2018-February/050279.html)
+
 [![](http://truejs.com/content/images/2016/07/destructuring-1.png)](http://exploringjs.com/es6/ch_destructuring.html)
 
 Destructuring into object
@@ -13,7 +15,7 @@ If you assign via destructuring, each assignment target can be everything that i
 	
 	console.log(target); // {a:1}
 ```
-## Problem
+## The Problem
 
 ES6 destructuring syntax isn't very readable and useful, especially for assigning to properties of existing object:
 ```js
@@ -34,7 +36,7 @@ There is no reasons to start using new ES6 destructuring syntax now, old syntax 
 - identifiers are still duplicated
 - you should write braces `()` or use other solution, because JS statement cannot starts with `{`
 
-## Proposal
+## The Proposal
 
 So, in addition to current ES6 syntax, I want to propose this sugar:
 ```js
