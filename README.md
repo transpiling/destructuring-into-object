@@ -1,23 +1,23 @@
-- [ES discuss mailing list](https://mail.mozilla.org/pipermail/es-discuss/2018-February/050279.html)
+- [ES-discuss mailing list](https://mail.mozilla.org/pipermail/es-discuss/2018-February/050279.html) (Preparation for the [TC39 Process](https://tc39.github.io/process-document/))
 
 [![](http://truejs.com/content/images/2016/07/destructuring-1.png)](http://exploringjs.com/es6/ch_destructuring.html)
 
-Destructuring into object
--------------------------
+Subject: Destructuring into object
+----------------------------------
+>
+> If you assign via destructuring, each assignment target can be everything that is allowed on the left side of a normal assignment.
+> ```js
+>	let srcObject = {a:1,b:2,c:3}, target = {};     
+>	
+>	({a: target.a} = srcObject);  
+>	
+>	console.log(target); // {a:1}
+> ```
+> _[(You can assign to more than just variables)](http://exploringjs.com/es6/ch_destructuring.html#sec_assignment-targets)_
 
-[(You can assign to more than just variables)](http://exploringjs.com/es6/ch_destructuring.html#sec_assignment-targets)
-
-If you assign via destructuring, each assignment target can be everything that is allowed on the left side of a normal assignment.
-```js
-	let srcObject = {a:1,b:2,c:3}, target = {};     
-	
-	({a: target.a} = srcObject);  
-	
-	console.log(target); // {a:1}
-```
 ## The Problem
 
-ES6 destructuring syntax isn't very readable and useful, especially for assigning to properties of existing object:
+ES6 destructuring syntax isn't very readable and useful, in case with assigning to properties of existing object:
 ```js
 	// ES6
 	({
@@ -36,7 +36,7 @@ There is no reasons to start using new ES6 destructuring syntax now, old syntax 
 - identifiers are still duplicated
 - you should write braces `()` or use other solution, because JS statement cannot starts with `{`
 
-## The Proposal
+## Proposal
 
 So, in addition to current ES6 syntax, I want to propose this sugar:
 ```js
